@@ -56,3 +56,4 @@ let computerScore=0;
 playGame();
 let winner= (humanScore>computerScore) ? "human" : (computerScore>humanScore) ? "computer": "nobody"; 
 alert("humanScore: "+humanScore+" VS computerScore: "+computerScore+"\n"+winner+" won the game !");
+(document.getElementById("winner")).innerHTML=winner+" won the game !";
