@@ -15,3 +15,26 @@ function getHumanChoice(){
     return choice.toLowerCase();
 
 }
+
+function choiceToInt(choice){
+    let result= 
+    (choice=="paper") ? () => Number(0) :
+    (choice=="rock") ? () => Number(1) :
+    () => Number(2);
+    
+    return result();
+}
+
+function playRound(ComputerChoice,HumanChoice)
+{
+    
+    let intComputerChoice=choiceToInt(ComputerChoice);
+    let intHumanChoice=choiceToInt(HumanChoice);
+
+    
+    (intComputerChoice==intHumanChoice) ? alert("no body won this round !"):
+    ( (intComputerChoice-intHumanChoice)<0 && (intComputerChoice-intHumanChoice)==-1 ) ?  (alert("computer chose '"+ComputerChoice+"' computer won this round !"), computerScore+=1):
+    ( (intComputerChoice-intHumanChoice)>0 && (intComputerChoice-intHumanChoice)!=1 ) ? (alert("computer chose '"+ComputerChoice+"' computer won this round !"), computerScore+=1):
+                                                                                        (alert("computer chose '"+ComputerChoice+"' you won this round !"), humanScore+=1);
+
+}
