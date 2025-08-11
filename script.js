@@ -38,3 +38,21 @@ function playRound(ComputerChoice,HumanChoice)
                                                                                         (alert("computer chose '"+ComputerChoice+"' you won this round !"), humanScore+=1);
 
 }
+function playGame(){
+
+    alert("Let the game begin !");
+
+    for (let i=0;i<5;i++){
+
+        playRound(getComputerChoice(),getHumanChoice());
+
+    }
+}
+
+
+let humanScore=0;
+let computerScore=0;
+
+playGame();
+let winner= (humanScore>computerScore) ? "human" : (computerScore>humanScore) ? "computer": "nobody"; 
+alert("humanScore: "+humanScore+" VS computerScore: "+computerScore+"\n"+winner+" won the game !");
