@@ -9,12 +9,6 @@ function getComputerChoice(){
     return choice.toLocaleLowerCase();
 }
 
-function getHumanChoice(){
-
-    let choice=prompt("enter your choice between 'Rock', 'Paper' or 'Scissors' ");
-    return choice.toLowerCase();
-
-}
 
 function choiceToInt(choice){
     let result= 
@@ -28,32 +22,85 @@ function choiceToInt(choice){
 function playRound(ComputerChoice,HumanChoice)
 {
     
+    if(round==5){
+        
+        const gameTrack= document.querySelector(".gameTrack")
+        gameTrack.classList.add("gameTrackStyle")
+        if(humanScore>computerScore)message="game finished , congrats champ you won 🎉 !"
+        else if(humanScore<computerScore)message="game finished , you lost hard luck next time 👏 !"
+        else message="game finished , no body won 🟰 !"
+        return
+    }
     let intComputerChoice=choiceToInt(ComputerChoice);
     let intHumanChoice=choiceToInt(HumanChoice);
 
     
-    (intComputerChoice==intHumanChoice) ? alert("no body won this round !"):
-    ( (intComputerChoice-intHumanChoice)<0 && (intComputerChoice-intHumanChoice)==-1 ) ?  (alert("computer chose '"+ComputerChoice+"' computer won this round !"), computerScore+=1):
-    ( (intComputerChoice-intHumanChoice)>0 && (intComputerChoice-intHumanChoice)!=1 ) ? (alert("computer chose '"+ComputerChoice+"' computer won this round !"), computerScore+=1):
-                                                                                        (alert("computer chose '"+ComputerChoice+"' you won this round !"), humanScore+=1);
+    if (intComputerChoice == intHumanChoice) {
+        message = "no body won this round 🔃!";
+    } 
+    else if ((intComputerChoice - intHumanChoice) < 0 && (intComputerChoice - intHumanChoice) == -1) {
+        message = "computer chose '" + ComputerChoice + "' computer won this round ❌ !";
+        computerScore += 1;
+    } 
+    else if ((intComputerChoice - intHumanChoice) > 0 && (intComputerChoice - intHumanChoice) != 1) {
+        message = "computer chose '" + ComputerChoice + "' computer won this round ❌ !";
+        computerScore += 1;
+    } 
+    else {
+        message = "computer chose '" + ComputerChoice + "' you won this round ✅🔥 !";
+        humanScore += 1;
+    }
+
+    round++
+    
+   
 
 }
+
 function playGame(){
 
-    alert("Let the game begin !");
+    const gameTrack= document.querySelector(".gameTrack")
+    const gameChoices=document.querySelector(".gameChoicesContainer")
+    const humanScoreboard=document.querySelector("#humanScoreboard")
+    const computerScoreboard=document.querySelector("#computerScoreboard")
+    const roundScoreboard=document.querySelector("#roundScoreboard")
+    
+    const resetButton=document.querySelector(".resetButton")
 
-    for (let i=0;i<5;i++){
+    gameChoices.addEventListener("click",(e)=>{
 
-        playRound(getComputerChoice(),getHumanChoice());
+        if (e.target.id=="rock")playRound(getComputerChoice(),"rock")
+        if (e.target.id=="paper")playRound(getComputerChoice(),"paper")
+        if (e.target.id=="scissors")playRound(getComputerChoice(),"scissors")
 
-    }
+        gameTrack.textContent=message
+        humanScoreboard.textContent=`You: ${humanScore}`
+        computerScoreboard.textContent=`Computer: ${computerScore}`
+        roundScoreboard.textContent=`Round: ${round}/5`
+
+    })
+
+    resetButton.addEventListener("click",()=>{
+
+        message="Select your choice to begin !";
+        humanScore=0;
+        computerScore=0;
+        round=0;
+        gameTrack.classList.remove("gameTrackStyle")
+        gameTrack.textContent=message
+        humanScoreboard.textContent=`You: ${humanScore}`
+        computerScoreboard.textContent=`Computer: ${computerScore}`
+        roundScoreboard.textContent=`Round: ${round}/5`
+
+    })
+
 }
 
-
+let message;
 let humanScore=0;
 let computerScore=0;
+let round=0;
 
-playGame();
-let winner= (humanScore>computerScore) ? "human" : (computerScore>humanScore) ? "computer": "nobody"; 
-alert("humanScore: "+humanScore+" VS computerScore: "+computerScore+"\n"+winner+" won the game !");
-(document.getElementById("winner")).innerHTML=winner+" won the game !";
+
+playGame()
+

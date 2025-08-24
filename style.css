@@ -64,18 +64,21 @@ body{
 }
 
 .scoreBoard span{
-    font-size: 30px;
-    margin: 10px;
+    font-size: 25px;
+    margin: 20px;
+    font-weight:400; 
 }
 .scoreBoard{
     margin-bottom: 40px;
     margin-top: 30px;
-    text-align: center;
     background-color:white;
     padding: 10px;
     border: 5px solid black;
     width: 500px;
     height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -90,4 +93,11 @@ body{
 
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.gameTrackStyle{
+    padding: 20px;
+    border: 5px solid black;
+    background-color:#00BFFF;
+    font-style: oblique;
 }
