@@ -3,17 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game</title>
+    <title>Rock Paper Scissors</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
     
 </head>
 <body>
     
-    <h1 style="text-align: center;">Rock Paper Scissors Game</h1>
-    <h2 style="text-align: center;color: red;font-family: 'Courier New', Courier, monospace;" id="winner"></h2>
+    <h1>Rock Paper Scissors Game</h1>
+    
+    <div class="scoreBoard">
+        <p>
+            <span>You</span> | <span>Computer</span> | <span>Round</span>
+        </p>
+    </div>
+
+    <div class="gameChoicesContainer">
+
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <p class="gameDescription"></p>
+
+    <button class="resetButton"></button>
 
     
 </body>
 
-<script src="script.js"></script>
+
 
 </html>
