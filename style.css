@@ -1,0 +1,93 @@
+*{
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    border-radius: 10px;
+}
+
+body{
+    background-color: #b8ffff;
+
+
+}
+
+.main-container{
+
+    display: flex;
+    gap:10px;
+    flex-direction: column;
+    align-items:center;
+
+}
+
+.gameChoicesContainer{
+    
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.gameChoicesContainer div{
+
+    padding: 20px;
+    width: 180px;
+    height: 180px;
+    border: 3px solid black;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gameChoicesContainer div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+
+#rock{
+
+    background-image: url(images/rock.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+#paper{
+
+    background-image: url(images/paper.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+#scissors{
+
+    background-image: url(images/scissors.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.scoreBoard span{
+    font-size: 30px;
+    margin: 10px;
+}
+.scoreBoard{
+    margin-bottom: 40px;
+    margin-top: 30px;
+    text-align: center;
+    background-color:white;
+    padding: 10px;
+    border: 5px solid black;
+    width: 500px;
+    height: 40px;
+}
+
+
+.resetButton{
+    height: 50x;
+    width: 150px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.resetButton:hover{
+
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}

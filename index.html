@@ -4,30 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <script src="script.js" defer></script>
+    <!-- <script src="script.js" defer></script> -->
     <link rel="stylesheet" href="style.css">
     
 </head>
 <body>
     
-    <h1>Rock Paper Scissors Game</h1>
-    
-    <div class="scoreBoard">
-        <p>
-            <span>You</span> | <span>Computer</span> | <span>Round</span>
-        </p>
+   <div class="main-container">
+        <h1>Rock Paper Scissors Game</h1>
+        
+        <div class="scoreBoard">
+
+                <span>You</span>  <span>Computer</span>  <span>Round</span>
+
+        </div>
+
+        <div class="gameChoicesContainer">
+
+            <div id="rock"></div>
+            <div id="paper"></div>
+            <div id="scissors"></div>
+        </div>
+
+        <p class="gameDescription"> Select your choice to begin !</p>
+
+        <button class="resetButton"> Reset</button>
+
     </div>
-
-    <div class="gameChoicesContainer">
-
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-
-    <p class="gameDescription"></p>
-
-    <button class="resetButton"></button>
 
     
 </body>
