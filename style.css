@@ -63,23 +63,27 @@ body{
     background-position: center;
 }
 
+
 .scoreBoard span{
-    font-size: 25px;
     margin: 20px;
+    font-size: 25px;
     font-weight:400; 
 }
+
+
+
 .scoreBoard{
     margin: 20px;
     background-color:white;
     padding: 5px;
     border: 5px solid black;
-    width: 500px;
-    height: 40px;
     display: flex;
-    
     justify-content: center;
     align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
 }
+
 
 
 .resetButton{
